@@ -1,43 +1,41 @@
-!!! 5
+!!!
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
-    %title Ryan's Sinatra Bootstrap
+    %title Lestrella
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     %meta{:content => "", :name => "description"}/
     %meta{:content => "", :name => "author"}/
     / Le styles
-    %link{:href => "/stylesheets/style.css", :rel => "stylesheet"}/
-
+    %link{:href => "stylesheets/responsive.css", :rel => "stylesheet"}/
+    %link{:href => "stylesheets/style.css", :rel => "stylesheet"}/
     / Le HTML5 shim, for IE6-8 support of HTML5 elements
     /[if lt IE 9]
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     / Le fav and touch icons
-    %link{:href => "/ico/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "/favicon.ico", :rel => "icon", :type => "image/x-icon"}/
     %link{:href => "/ico/apple-touch-icon-114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}/
     %link{:href => "/ico/apple-touch-icon-72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}/
     %link{:href => "/ico/apple-touch-icon-57-precomposed.png", :rel => "apple-touch-icon-precomposed"}/
-    
-  %body
-    .navbar.navbar-responsive-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{:href => "/"} Ryan's Sinatra Bootstrap
-          .nav-collapse
-            %ul.nav.header_nav
-              %li.active
-                %a{:href => "/"} Basic
-              %li
-                %a{:href => "/test"} Test Some Elements              
-              %li
-                %a{:href => "/pics"} Pictures  
-    #load
-      = yield
-
-    %script{:src => "/js/jquery.js"}
-    %script{:src => "/js/bootstrap.js"}
-    %script{:src => "/coffee/scripts.js"}
+    %script{:src => "http://code.jquery.com/jquery-latest.min.js"}    
+    %script{:src => "js/load.js"}   
+  %body#body.home
+    #fb-root
+      :javascript
+        //<![CDATA[
+        (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));            
+        //]]>
+    = haml :navbar  
+    .container.main
+      #load
+        = yield
+    -# %a#backToTop{:href => "#body"} Back to Top
+    %script{:src => "js/underscore-min.js"}
+    %script{:src => "js/bootstrap.js"}
+    %script{:src => "coffee/scripts.js"} 

@@ -1,89 +1,143 @@
+$navbarBackgroundHighlight: #416191
+$navbarBackground: rgba(117, 83, 134, .7)
+$navbarBrandColor: white
+$navbarLinkColor: white
+$navbarLinkColorHover: white
+$navbarLinkColorActive: white
+
 @import bootstrap
+@import bourbon/bourbon
 
-.navbar .container
-  +grid-core-span($gridColumns, $gridColumnWidth, $gridGutterWidth)
+// my mixins
+=text_black
+  text-shadow: 0 1px 0 black
+=text_white
+  text-shadow: 0 1px 0 white
+
+// global styles
+html, body
+  height: 100%
+  zoom: 1
+ 
+body
+  &.about,
+  &.work,
+  &.contact
+    background: #D2D2D2
+    background: url('/img/bg.png') no-repeat 25px -43px, #D2D2D2
+
+#background
+  background: url(/img/lightbgday.png) no-repeat 0 0, #89AB2A
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 100
+  background-size: 100%
+
+#foreground
+  background: url(/img/movingclouds.png) repeat-x 120% 50%
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 200
+  -webkit-transition: left 100s linear
+  -moz-transition: left 100s linear
+  -o-transition: left 100s linear
+  -ms-transition: left 100s linear
+  transition: left 100s linear
+
+#experiment:target #foreground 
+  left: -5000px
+
+#experiment:hover #foreground 
+  left: -9999px
+
+.container.main
   
-p.top span
-  color: red
+#load
+  margin: 20px auto 20px
   
-.i, h2
-  display: inline
-  
-.clear_header 
-  margin-top: 60px
-  
-.user, .graph, .comment, .tips, .activity, .about, .achievements, .usage
-  -moz-border-radius: 4px
-  -webkit-border-radius: 4px
-  border-radius: 4px
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .4)
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .4)
-  -box-shadow: 0 0 5px rgba(0, 0, 0, .4)
-  display: block
-  margin: 30px 0 30px 0
-  padding: 20px
-            
-.user
-  height: 100px - 40px
+.navbar 
   margin-bottom: 0
+ 
+.navbar-inner
+  +gradient-vertical(rgba(117, 83, 134, .4), rgba(117, 83, 134, .5))
+  border: none
+  .container a,
+  .nav.pull-left ul li a
+    font-family: $baseFontFamily
+    color: #262626
+    font-weight: bold
+    letter-spacing: 0.12em
+    font-size: 12px
+    &:hover
+      color: darken(#494342, 20%)
+  .nav.pull-right ul li a
+    font-family: $baseFontFamily
+    color: #262626
+    font-weight: 500
+    letter-spacing: 0.15em
+    font-size: 12px
+    &:hover
+      color: darken(#494342, 20%)
+ 
+.relative
+  position: relative
   
-.graph
-  height: 400px - 40px
-  
-.comment
-  height: 40px - 40px
-  
-.tips
-  height: 200px - 40px
-
-.activity
-  height: 200px - 40px
+// landing page
+#landing 
+  margin-top: 30px
+  h3, p
+    padding: 0
+    margin-top: 0
+    line-height: 1.2em  
     
-.about, .achievements
-  height: 220px - 40px
+.description
+  h2
+    margin: 10px 0 0 0 
+    font-size: 34px
+    font-weight: 200
+    +text_white    
 
-.usage
-  height: 430px - 40px
+// about styles
+ul.service_list
+  margin: 0 
+  list-style: none
+  width: 450px
+  float: left
+  li
+    font-weight: 400px
+    margin-bottom: 10px
 
-.widget
+ul.client_list
+  margin: 0 
+  list-style: none
+  width: 450px
+  float: left
+  li
+    font-weight: 400px
+    margin-bottom: 10px
+
+
+.thumbnail
   background: white
-  margin: 0 auto
-  text-align: left
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25)
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25)
-  box-shadow: 0 1px 3px rgba(0,0,0,0.25)
-
-.widget > .btn-toolbar
-  font-weight: bold
-  margin: 0
-  padding: 4px
-  background-color: #FCFCFC
-  background-image: -webkit-gradient(linear,0 0,0 100%,from(white),color-stop(25%,white),to(#EEE))
-  background-image: -webkit-linear-gradient(white,white 25%,#EEE)
-  background-image: -moz-linear-gradient(top,white,white 25%,#EEE)
-  background-image: -ms-linear-gradient(white,white 25%,#EEE)
-  background-image: -o-linear-gradient(white,white 25%,#EEE)
-  background-image: linear-gradient(white,white 25%,#EEE)
-  background-repeat: no-repeat
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#eeeeee',GradientType=0)
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.15)
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.15)
-  box-shadow: 0 1px 3px rgba(0,0,0,0.15)
-  h4
-    margin: .3em 0 .3em
-
-.nav > li > a 
-  display: block
-
-.nav-list-wt.nav-inline > li 
-  padding: .9em 1em .9em
   
-.nav-list-wt.nav-inline > li h3 a, .nav-list-wt.nav-inline > li a.nav-normal 
-  display: inline
-  padding: 0
+.portfolio-header
+  a
+    font-size: 18px
+    line-height: 20px
+    color: #494342
+    font-weight: 400
 
-.nav-list-wt li 
-  border-top: 1px solid #EEE
-      
-.nav-list-wt.nav-inline > li:first-child
-  border-top: none!Important
+#contact
+  p
+    line-height: 9px
+  h4
+    margin: 30px 0 15px 0
+    font-weight: 400
+
+    
