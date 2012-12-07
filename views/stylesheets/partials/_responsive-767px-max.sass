@@ -27,6 +27,7 @@
       text-align: left
     dd
       margin-left: 0
+
   // GRID & CONTAINERS
   // -----------------
   // Remove width from containers
@@ -91,6 +92,36 @@
 // ---------------------
 
 @media (max-width: 480px)
+
+  #background
+    background: url(/img/smbg.png) no-repeat 0 0, #89AB2A
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 100
+    background-size: 100%
+
+  #foreground
+    background: url(/img/movingclouds.png) repeat-x 120% 50%
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 200
+    -webkit-transition: left 100s linear
+    -moz-transition: left 100s linear
+    -o-transition: left 100s linear
+    -ms-transition: left 100s linear
+    transition: left 100s linear
+
+  #experiment:target #foreground 
+    left: -5000px
+
+  #experiment:hover #foreground 
+    left: -9999px
   // Smooth out the collapsing/expanding nav	
   .nav-collapse
     -webkit-transform: translate3d(0, 0, 0)
