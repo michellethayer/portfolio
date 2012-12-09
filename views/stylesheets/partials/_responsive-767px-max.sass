@@ -6,7 +6,21 @@
   // Padding to set content in a bit
   body
     padding-left: 20px
-    padding-right: 20px		
+    padding-right: 20px	
+	
+  #background
+    background: url(/img/medbg.png) no-repeat 0 0, #89AB2A
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 100
+    background-size: 100%
+
+  #foreground
+    background: none
+
   // Negative indent the now static "fixed" navbar
   .navbar-fixed-top,
   .navbar-fixed-bottom,
@@ -88,6 +102,28 @@
     &.fade.in
       top: auto
 
+  .page-header
+    display: block
+    line-height: $baseLineHeight
+    margin-top: 35px
+
+
+  ul.service_list
+    margin: 0
+    width: 100%
+    float: none
+    li
+      margin-bottom: 10px
+
+  ul.client_list
+    margin: 0 
+    width: 100%
+    float: none
+    li
+      font-weight: 400px
+      margin-bottom: 10px
+
+
 // UP TO LANDSCAPE PHONE
 // ---------------------
 
@@ -104,32 +140,16 @@
     background-size: 100%
 
   #foreground
-    background: url(/img/movingclouds.png) repeat-x 120% 50%
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-    z-index: 200
-    -webkit-transition: left 100s linear
-    -moz-transition: left 100s linear
-    -o-transition: left 100s linear
-    -ms-transition: left 100s linear
-    transition: left 100s linear
-
-  #experiment:target #foreground 
-    left: -5000px
-
-  #experiment:hover #foreground 
-    left: -9999px
+    background: none
   // Smooth out the collapsing/expanding nav	
   .nav-collapse
     -webkit-transform: translate3d(0, 0, 0)
     // activate the GPU
   // Block level the page header small tag for readability
-  .page-header h1 small
+  .page-header
     display: block
     line-height: $baseLineHeight
+    margin-top: 35px
   // Update checkboxes for iOS
   input[type="checkbox"],
   input[type="radio"]
@@ -163,3 +183,25 @@
   // Carousel
   .carousel-caption
     position: static
+
+  .row,
+  .thumbnails
+    margin-left: 0
+  .thumbnails > li
+    float: none
+    margin-left: 0
+
+  ul.service_list
+    margin: 0
+    width: 100%
+    float: none
+    li
+      margin-bottom: 10px
+
+  ul.client_list
+    margin: 0 
+    width: 100%
+    float: none
+    li
+      font-weight: 400px
+      margin-bottom: 10px

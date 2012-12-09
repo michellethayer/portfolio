@@ -10,3 +10,36 @@
   // Input grid
   +grid-input($gridColumnWidth768, $gridGutterWidth768)
   // No need to reset .thumbnails here since it's the same $gridGutterWidth
+
+  #background
+    background: url(/img/medbg.png) no-repeat 0 0, #89AB2A
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 100
+    background-size: 100%
+
+  #foreground
+    background: none
+
+  .page-header 
+    display: block
+    line-height: $baseLineHeight
+    margin-top: 35px
+
+  ul.service_list
+    margin: 0
+    width: 100%
+    float: none
+    li
+      margin-bottom: 10px
+
+  ul.client_list
+    margin: 0 
+    width: 100%
+    float: none
+    li
+      font-weight: 400px
+      margin-bottom: 10px
