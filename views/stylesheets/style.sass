@@ -1,0 +1,155 @@
+$navbarBackgroundHighlight: rgba(117, 83, 134, .4)
+$navbarBackground: rgba(117, 83, 134, .4)
+$navbarBrandColor: white
+$navbarLinkColor: white
+$navbarLinkColorHover: white
+$navbarLinkColorActive: white
+
+@import bootstrap
+@import bourbon/bourbon
+
+// my mixins
+=text_black
+  text-shadow: 0 1px 0 black
+=text_white
+  text-shadow: 0 1px 0 white
+
+// global styles
+html, body
+  height: 100%
+  zoom: 1
+ 
+body
+  &.about,
+  &.work,
+  &.contact
+    background: #D2D2D2
+    background: url('/img/bg.png') no-repeat 3px -43px, #D2D2D2
+
+#background
+  background: url(/img/lightbgday.png) no-repeat 0 0, #89AB2A
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 100
+  background-size: 100%
+
+#foreground
+  background: url(/img/movingclouds.png) repeat-x 120% 50%
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 200
+  -webkit-transition: left 100s linear
+  -moz-transition: left 100s linear
+  -o-transition: left 100s linear
+  -ms-transition: left 100s linear
+  transition: left 100s linear
+
+#experiment:target #foreground 
+  left: -5000px
+
+#experiment:hover #foreground 
+  left: -9999px
+
+.container.main
+  
+#load
+  margin: 20px auto 20px
+  
+.navbar 
+  margin-bottom: 0
+ 
+.navbar-inner
+  +gradient-vertical(rgba(117, 83, 134, .4), rgba(117, 83, 134, .5))
+  border: none
+  .container a,
+  .nav.pull-left ul li a
+    font-family: $baseFontFamily
+    color: #262626
+    font-weight: bold
+    letter-spacing: 0.12em
+    font-size: 12px
+    &:hover
+      color: darken(#494342, 20%)
+  .nav.pull-right ul li a
+    font-family: $baseFontFamily
+    color: #262626
+    font-weight: 500
+    letter-spacing: 0.15em
+    font-size: 12px
+    &:hover
+      color: darken(#494342, 20%)
+ 
+.relative
+  position: relative
+  
+// landing page
+#landing 
+  margin-top: 30px
+  h3, p
+    padding: 0
+    margin-top: 0
+    line-height: 1.2em  
+    
+.description
+  h2
+    margin: 10px 0 0 0 
+    font-size: 34px
+    font-weight: 200
+    +text_white    
+
+// about styles
+ul.service_list
+  margin: 0
+  list-style: none
+  width: 450px
+  float: left
+  li
+    font-weight: 400px
+    margin-bottom: 10px
+
+ul.client_list
+  margin: 0 
+  list-style: none
+  width: 450px
+  float: left
+  li
+    font-weight: 400px
+    margin-bottom: 10px
+
+
+.thumbnail
+  background: white
+  
+.portfolio-header
+  a
+    font-size: 18px
+    line-height: 20px
+    color: #494342
+    font-weight: 400
+
+#contact
+  p
+    line-height: 9px
+  h4
+    margin: 30px 0 15px 0
+    font-weight: 400
+		
+.page-header
+  padding-bottom: $baseLineHeight / 2 - 1
+  margin: 100px auto 20px
+  border-bottom: 1px solid #4B4C4D
+  font-family: $headingsFontFamily
+  font-weight: 100
+
+.page-header2
+  padding-bottom: $baseLineHeight / 2 - 1
+  margin: 30px auto 20px
+  border-bottom: 1px solid #4B4C4D
+  font-family: $headingsFontFamily
+  font-weight: 100

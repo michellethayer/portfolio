@@ -1,0 +1,160 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <title>LocalResponse</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <meta content='' name='description' />
+    <meta content='' name='author' />
+    <!-- Le styles -->
+    <link href='stylesheets/style.css' rel='stylesheet' />
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Le fav and touch icons -->
+    <link href='/favicon.ico' rel='icon' type='image/x-icon' />
+    <link href='/ico/apple-touch-icon-114-precomposed.png' rel='apple-touch-icon-precomposed' sizes='114x114' />
+    <link href='/ico/apple-touch-icon-72-precomposed.png' rel='apple-touch-icon-precomposed' sizes='72x72' />
+    <link href='/ico/apple-touch-icon-57-precomposed.png' rel='apple-touch-icon-precomposed' />
+    <script src='http://code.jquery.com/jquery-latest.min.js'></script>
+    <script src='js/load.js'></script>
+  </head>
+  <body class='home' id='body'>
+    <div id='fb-root'>
+      <script type='text/javascript'>
+        //<![CDATA[
+          //<![CDATA[
+          (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));            
+          //]]>
+        //]]>
+      </script>
+    </div>
+    <div class='navbar'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <ul class='nav pull-left'></ul>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a class='brand' href='/'></a>
+          <div class='nav-collapse'>
+            <ul class='nav pull-right'>
+              <li class='divider-vertical'></li>
+              <li>
+                <a href='/about'>About Us</a>
+              </li>
+              <li class='divider-vertical'></li>
+              <li>
+                <a href='/team'>Team</a>
+              </li>
+              <li class='divider-vertical'></li>
+              <li>
+                <a class='contact' data-toggle='modal' href='#contact_form' role='button'>Get in Touch</a>
+              </li>
+              <li class='divider-vertical'></li>
+              <li>
+                <a class='login' href='http://pro.localresponse.com' target='_blank'>Pro Login</a>
+              </li>
+              <li class='divider-vertical'></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='container main'>
+      <div id='load'>
+        <%= yield %>
+      </div>
+  <footer>
+  <div class='container'>
+    <div class='row'>
+      <div class='span6'>
+        <ul class='footer_links'>
+          <li>
+            <img class='tw' src='img/twitter.png' />
+            <a href='http://twitter.com/LocalResponse' target='_blank'>Twitter</a>
+          </li>
+          <li>
+            <img class='fb' src='img/facebook.png' />
+            <a href='http://www.facebook.com/pages/LocalResponse/148870215179862' target='_blank'>Facebook</a>
+          </li>
+          <li>
+            <img src='img/linkedin.png' />
+            <a href='http://www.linkedin.com/company/local-response' target='_blank'>LinkedIn</a>
+          </li>
+          <li>
+            <img src='img/madein2.png' />
+            <a href='http://nytm.org/made-in-nyc' target='_blank'>Made in NYC</a>
+          </li>
+        </ul>
+        <hr />
+        <ul class='footer_links company'>
+          <li>
+            <a class='legal' href='/terms'>Terms</a>
+          </li>
+          <li>
+            <a class='legal' href='/privacy'>Privacy</a>
+          </li>
+          <li>
+            <a href='http://localresponsepress.tumblr.com/' target='_blank'>Press</a>
+          </li>
+          <li>
+            <a href='http://localresponsejobs.tumblr.com/' target='_blank'>Jobs</a>
+          </li>
+        </ul>
+        <ul class='follow'>
+          <li class='tw'>
+            <a class='twitter-follow-button' data-lang='en' data-show-count='true' data-width='240px' href='https://twitter.com/localresponse'>Follow @localresponse</a>
+            <script type='text/javascript'>
+              //<![CDATA[
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+              //]]>
+            </script>
+          </li>
+          <li class='fb'>
+            <div class='fb-like' data-href='http://www.facebook.com/pages/LocalResponse/148870215179862' data-layout='button_count' data-send='false' data-show-faces='false' data-width='450'></div>
+          </li>
+        </ul>
+      </div>
+      <div class='span6' id='signup'>
+        <form class='form-inline well'>
+          <input class='input-large' name='subscriberEmail' placeholder='Enter Your Email Address' type='text'>
+            <button class='btn btn-primary' id='mailingButton' type='submit'>Stay in Touch</button>
+          </input>
+        </form>
+      </div>
+    </div>
+  </div>
+</footer>
+    <div aria-hidden='true' aria-labelledby='myModalLabel' class='modal ghost' id='contact_form' role='dialog' tabindex='-1'>
+  <div class='modal-header'>
+    <button aria-hidden='true' class='close' data-dismiss='modal' type='button'>×</button>
+    <h3 id='myModalLabel'>Get in Touch</h3>
+  </div>
+  <div class='modal-body'>
+    <form>
+      <input name='customerName' placeholder='Your Name' type='text' value='' />
+      <input name='customerEmail' placeholder='Your Email Address' type='text' value='' />
+      <textarea id='txt' name='customerMessage' placeholder='What can we help you with?' rows='6'></textarea>
+    </form>
+  </div>
+  <div class='modal-footer'>
+    <button aria-hidden='true' class='btn' data-dismiss='modal'>Close</button>
+    <button class='btn btn-primary' id='infoRequestButton'>Submit</button>
+  </div>
+</div>
+    <script src='js/underscore-min.js'></script>
+    <script src='js/bootstrap.js'></script>
+    <script src='coffee/scripts.js'></script>
+  </body>
+</html>
