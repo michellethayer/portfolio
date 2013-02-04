@@ -1,8 +1,16 @@
 %body.experiment
   #wrapper
-    #experiment
+    #day
       #foreground
       #midground
       #background
+    #night{:style => "display: none;"}
+      #foreground2
+      #midground2
+      #background2
+
+    #examples
+      %input#shownight{:name => "showh1", :type => "submit", :value => "☾", :class=>""}
+      %input#showday{:name => "toggleh1", :type => "submit2", :value => "☀", :class=>""} 
 
   %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"}

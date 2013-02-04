@@ -16,6 +16,19 @@ $(document).ready ->
       body.addClass('home')
     else
       body.addClass(myClass)
+
+  #background switcher
+
+  #$("#experiment").hide()
+
+  $("#shownight").click ->
+    $("#night").show()
+    $("#day").hide()
+
+  $("#showday").click ->
+    $("#day").show()
+    $("#night").hide()
+
   
   # ajax #load content
   $(".nav a, .brand, footer .legal").live "click", (e) ->

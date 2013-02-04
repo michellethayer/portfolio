@@ -102,11 +102,30 @@
 
 // Specificity overrides
 
-input[type="submit"],
+input[type="submit"]
+  width: 100%
+  background-image: url(/img/sun_moon-sm.png)
+  background-position: 0px
+  background-color: rgba(0,0,0, 0)
+  border: none
+  box-shadow: none
+  text-indent: -9999px
+	
+input[type="submit2"]
+  width: 100%
+  background-image: url(/img/sun_moon-sm.png)
+  background-position: -59px
+  background-color: rgba(0,0,0, 0)
+  border: none
+  outline: 0
+  box-shadow: none
+  text-indent: -9999px
+
 input[type="reset"],
 input[type="button"]
   &.btn-block
     width: 100%
+
 
 // Alternate buttons
 // --------------------------------------------------
@@ -155,7 +174,8 @@ input[type="button"]
 // --------------------------------------------------
 
 button.btn,
-input[type="submit"].btn
+input[type="submit"].btn,
+input[type="submit2"].btn
   // Firefox 3.6 only I believe
   &::-moz-focus-inner
     padding: 0

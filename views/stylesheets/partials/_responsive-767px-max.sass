@@ -4,10 +4,7 @@
 
 @media (max-width: 767px)
   // Padding to set content in a bit
-  body
-    padding-left: 20px
-    padding-right: 20px	
-	
+
   #background
     background: url(/img/medbg.png) no-repeat 0 0, #89AB2A
     position: absolute
@@ -21,6 +18,22 @@
   #foreground
     background: none
 
+  #background2
+    background: url(/img/darkmedbg.png) no-repeat 0 0, #2c662e
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 100
+    background-size: 100%
+
+  #foreground2
+    background: none
+
+  #examples 
+    top: -22px
+    left: 10px
   // Negative indent the now static "fixed" navbar
   .navbar-fixed-top,
   .navbar-fixed-bottom,
@@ -142,7 +155,25 @@
 
   #foreground
     background: none
-  // Smooth out the collapsing/expanding nav	
+
+  #background2
+    background: url(/img/darksmbg.png) no-repeat 0 0, #2c662e
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 100
+    background-size: 100%
+    min-height: 480px
+
+  #foreground2
+    background: none
+
+  #examples 
+    top: -22px
+    left: 10px
+
   .nav-collapse
     -webkit-transform: translate3d(0, 0, 0)
     // activate the GPU
